@@ -1,0 +1,38 @@
+<div class="top">
+  <div class="center">
+    <h1>Total Telemetry Data</h1>
+    <h2>{{dataSize | number: '1.2-2'}} KB</h2>
+  </div>
+  <div class="center">
+    <h1>Connected Clients</h1>
+    <h2>{{connectedClients.length}}</h2>
+  </div>
+</div>
+<hr>
+<div class="bottom">
+  <h2>Clients</h2>
+  <mat-accordion *ngFor="let client of connectedClients">
+    <mat-expansion-panel (click)="selectedClient = client">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{client.id}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{client.description}}
+          ({{client.location}})
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="commandGrid">
+        <mat-form-field>
+          <mat-label>Commands</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let command of client.commands" value="command" (click)="selectedCommand = command">
+              {{command}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-button (click)="selectCommand()">Execute Command</button>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

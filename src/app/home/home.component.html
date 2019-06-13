@@ -1,0 +1,24 @@
+<mat-drawer-container class="fullScreen">
+  <mat-drawer mode="side" [(opened)]="drawer">
+    <mat-list role="list" class="test">
+      <mat-list-item>
+        <h2>HA Dash</h2>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="realTime">Real Time Data</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="historical">Historical</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="clients">Clients</button>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+  <mat-drawer-content class="fullScreen">
+    <button mat-button (click)="toggleDrawer()">
+      <mat-icon>view_headline</mat-icon>
+    </button>
+    <router-outlet class="fullScreen"></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

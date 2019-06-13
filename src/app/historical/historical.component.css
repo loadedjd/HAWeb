@@ -1,0 +1,16 @@
+.top {
+    margin-top: 8px;
+    height: 25%;
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+
+.bottom {
+    height: 75%;
+}
+
+.grid {
+    height: 100%;
+    width: 100%;
+}

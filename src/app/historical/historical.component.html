@@ -1,0 +1,15 @@
+<div class="grid">
+  <div class="top">
+      <mat-select placeholder="Clients" [(ngModel)]="selectedClientId">
+        <mat-option *ngFor="let client of clients" value='{{client.id}}' (click)="updateSelectedData()">
+          {{client.id}}
+        </mat-option>
+      </mat-select>
+  </div>
+  <hr>
+  <div class="bottom">
+    <p *ngFor="let data of selectedData">
+      {{data.value}}
+    </p>
+  </div>
+</div>
